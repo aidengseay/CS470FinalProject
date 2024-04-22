@@ -4,7 +4,7 @@
 This program running in a Jupyter Notebook uses different ML algorithms to classify whether or not an email is spam. 
 
 ## About the dataset
-**All data can be found in the `data` directory**
+**All data can be found in the `Data` directory**
 
 * You can find the dataset [here](https://www.kaggle.com/datasets/colormap/spambase/data).
 
