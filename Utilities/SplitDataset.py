@@ -1,4 +1,26 @@
+################################################################################
 '''
-SPLIT DATASET FUNCTION UTILITIES
+RETRIEVE/SPLIT DATASET FUNCTION UTILITIES
+Credit: Aiden Seay - Spring 2024
 
+DESCRIPTION:
+Splits dataset to training (80%), and test (20%). Inside the training dataset
+complete a 5-cross validation (80% training and 20% evaluation).
 '''
+################################################################################
+# IMPORTS
+
+
+################################################################################
+# CONSTANTS
+
+
+################################################################################
+# MAIN FUNCTION
+
+
+################################################################################
+# SUPPORTING FUNCTIONS
+
+
+################################################################################
