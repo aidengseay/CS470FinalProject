@@ -17,6 +17,15 @@ Implement the k-nearest neighbors algorithm (knn).
 ################################################################################
 # MAIN FUNCTION
 
+'''
+Parameter(s):
+Process: Main algorithm for knn.
+Return:
+Function Dependencies:
+'''
+def knn_algo():
+    pass
+
 
 ################################################################################
 # SUPPORTING FUNCTIONS

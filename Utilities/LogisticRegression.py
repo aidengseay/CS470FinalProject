@@ -17,6 +17,15 @@ Implement the logistic regression algorithm.
 ################################################################################
 # MAIN FUNCTION
 
+'''
+Parameter(s):
+Process: Main algorithm fo logistic regression.
+Return:
+Function Dependencies:
+'''
+def logistic_regression_algo():
+    pass
+
 
 ################################################################################
 # SUPPORTING FUNCTIONS

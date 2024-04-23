@@ -17,6 +17,15 @@ Implement the naive bayes algorithm.
 ################################################################################
 # MAIN FUNCTION
 
+'''
+Parameter(s):
+Process: Main algorithm for naive bayes.
+Return:
+Function Dependencies:
+'''
+def naive_bayes_algo():
+    pass
+
 
 ################################################################################
 # SUPPORTING FUNCTIONS
