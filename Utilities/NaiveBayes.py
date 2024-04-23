@@ -23,7 +23,7 @@ Process: Main algorithm for naive bayes.
 Return:
 Function Dependencies:
 '''
-def naive_bayes_algo():
+def naive_bayes_main():
     pass
 
 

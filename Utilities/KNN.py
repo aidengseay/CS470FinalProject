@@ -23,7 +23,7 @@ Process: Main algorithm for knn.
 Return:
 Function Dependencies:
 '''
-def knn_algo():
+def knn_main():
     pass
 
 

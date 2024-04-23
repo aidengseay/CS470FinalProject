@@ -23,7 +23,7 @@ Process: Main algorithm fo logistic regression.
 Return:
 Function Dependencies:
 '''
-def logistic_regression_algo():
+def logistic_regression_main():
     pass
 
 
