@@ -24,7 +24,7 @@ import pandas as pd
 Parameter(s): file_path (str)
 Process: Reads file and adds data to a pandas data frame.
 Return: pandas data frame
-Function Dependencies: None
+Function Dependencies: read_csv
 '''
 def read_dataset(file_path):
     return pd.read_csv(file_path)
@@ -36,7 +36,7 @@ Process: Splits dataset to training (80%), and test (20%). Inside the training
          dataset complete a 5-cross validation (80% training and 20% 
          evaluation).
 Return: train_data (list), validation_data (list), X_test (list), y_test (list)
-Function Dependencies: None
+Function Dependencies: train_test_split, KFold
 '''
 def split_dataset(df):
 
@@ -53,12 +53,26 @@ def split_dataset(df):
     train_data = []
     validation_data = []
 
+    # split the data 20% validation, 80% training
     for train_index, validation_index in kf.split(X_train):
-        X_train_fold, X_validation_fold = X_train.iloc[train_index], X_train.iloc[validation_index]
-        y_train_fold, y_validation_fold = y_train.iloc[train_index], y_train.iloc[validation_index]
+
+        # get data for training
+        X_train_fold = X_train.iloc[train_index]
+        y_train_fold = y_train.iloc[train_index]
+
+        # get data for validation
+        X_validation_fold = X_train.iloc[validation_index]
+        y_validation_fold = y_train.iloc[validation_index]
+
+        # add data to list
         train_data.append((X_train_fold, y_train_fold))
         validation_data.append((X_validation_fold, y_validation_fold))
 
+    '''
+    FOLD RETURN STRUCTURE
+    train_data[fold #][0 for feature (X), 1 for target (y)]
+    validation_data[fold #][0 for feature (X), 1 for target (y)] 
+    '''
     return train_data, validation_data, X_test, y_test
 
 
