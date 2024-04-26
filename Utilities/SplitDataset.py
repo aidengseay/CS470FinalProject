@@ -68,8 +68,8 @@ def split_dataset(df):
         y_validation_fold = y_train.iloc[validation_index]
 
         # add data to list
-        train_data.append([X_train_fold, y_train_fold])
-        validation_data.append([X_validation_fold, y_validation_fold])
+        train_data.append((X_train_fold, y_train_fold))
+        validation_data.append((X_validation_fold, y_validation_fold))
 
     # train_data[fold #][0 for feature (X), 1 for target (y)]
     # validation_data[fold #][0 for feature (X), 1 for target (y)] 
