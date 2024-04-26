@@ -15,7 +15,10 @@ import pandas as pd
 
 ################################################################################
 # CONSTANTS
-    # NONE
+TARGET = 1
+FEATURE = 0
+SPAM = -1
+NOT_SPAM = -2
 
 ################################################################################
 # SUPPORTING FUNCTIONS
@@ -65,14 +68,11 @@ def split_dataset(df):
         y_validation_fold = y_train.iloc[validation_index]
 
         # add data to list
-        train_data.append((X_train_fold, y_train_fold))
-        validation_data.append((X_validation_fold, y_validation_fold))
+        train_data.append([X_train_fold, y_train_fold])
+        validation_data.append([X_validation_fold, y_validation_fold])
 
-    '''
-    FOLD RETURN STRUCTURE
-    train_data[fold #][0 for feature (X), 1 for target (y)]
-    validation_data[fold #][0 for feature (X), 1 for target (y)] 
-    '''
+    # train_data[fold #][0 for feature (X), 1 for target (y)]
+    # validation_data[fold #][0 for feature (X), 1 for target (y)] 
     return train_data, validation_data, X_test, y_test
 
 

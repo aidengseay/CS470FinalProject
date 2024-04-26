@@ -1,6 +1,6 @@
 ################################################################################
 '''
-LOGISTIC REGRESSION FUNCTION UTILITIES
+LOGISTIC REGRESSION CLASS UTILITY
 Credit: Aiden Seay - Spring 2024
 
 DESCRIPTION:
@@ -12,23 +12,25 @@ Implement the logistic regression algorithm.
 
 ################################################################################
 # CONSTANTS
-
-
-################################################################################
-# MAIN FUNCTION
-
-'''
-Parameter(s):
-Process: Main algorithm fo logistic regression.
-Return:
-Function Dependencies:
-'''
-def logistic_regression_main():
-    pass
-
+TARGET = 1
+FEATURE = 0
+SPAM = -1
+NOT_SPAM = -2
 
 ################################################################################
-# SUPPORTING FUNCTIONS
+# LOGISTIC REGRESSION CLASS
+
+class LogisticRegressionClass:
+
+    def __init__(self, train_fold, validation_fold, X_test, y_test):
+
+        # set variables to the class struct
+        self.train_fold = train_fold
+        self.validation_fold = validation_fold
+        self.X_test = X_test
+        self.y_test = y_test
+        self.spam_samples = None
+        self.email_samples = None
 
 
 ################################################################################
