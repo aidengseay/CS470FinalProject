@@ -31,6 +31,7 @@ class KNNClass:
         self.y_test = y_test
         self.spam_samples = None
         self.email_samples = None
+        self.k = 3
 
 
 

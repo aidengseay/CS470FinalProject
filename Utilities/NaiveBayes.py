@@ -61,7 +61,8 @@ class NaiveBayesClass:
     
     
     '''
-    Parameter(s): self, spam_prop, non_spam_prop, spam_word_freq, 
+    Parameter(s): self, spam_prop, non_spam_prop, spam_word_freq, test_dataset,
+                  answer_dataset
                   non_spam_word_freq
     Process: Takes in probabilities to calculate whether or not an email is spam
              or not. 
@@ -69,22 +70,22 @@ class NaiveBayesClass:
     Function Dependencies: none
     '''
     def evaluate(self, spam_prop, non_spam_prop, spam_word_freq, 
-                                                            non_spam_word_freq):
+                              non_spam_word_freq, test_dataset, answer_dataset):
 
         email_result = []
         true_result = []
         
         # iterate through the rows (emails) and cols (attributes)
-        for row in range(self.validation_fold[FEATURE].shape[0]):
+        for row in range(test_dataset.shape[0]):
 
             spam_calc = 1
             non_spam_calc = 1
 
-            true_result.append(self.validation_fold[TARGET].iloc[row])
+            true_result.append(answer_dataset.iloc[row])
 
-            for col in range(self.validation_fold[FEATURE].shape[1]):
+            for col in range(test_dataset.shape[1]):
 
-                value = self.validation_fold[FEATURE].iloc[row, col]
+                value = test_dataset.iloc[row, col]
 
                 # check if the word exists
                 if value > 0.0:
@@ -181,8 +182,9 @@ class NaiveBayesClass:
 
             # compute the probability with laplace smoothing
             non_spam_word_count_prob = ((1 + non_spam_word_count) / 
-                                                           (2 + non_spam_count))
-            spam_word_count_prob = (1 + spam_word_count) / (2 + spam_count )
+                           (self.train_fold[FEATURE].shape[0] + non_spam_count))
+            spam_word_count_prob = ((1 + spam_word_count) / 
+                              (self.train_fold[FEATURE].shape[0] + spam_count ))
 
             # append to results list
             non_spam_word_freq.append(non_spam_word_count_prob)
