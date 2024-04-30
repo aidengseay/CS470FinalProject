@@ -73,7 +73,7 @@ def split_dataset(df):
 
     # train_data[fold #][0 for feature (X), 1 for target (y)]
     # validation_data[fold #][0 for feature (X), 1 for target (y)] 
-    return train_data, validation_data, X_test, y_test
+    return train_data, validation_data, X_test, y_test, X_train, y_train
 
 
 ################################################################################

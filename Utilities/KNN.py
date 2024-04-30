@@ -8,7 +8,7 @@ Implement the k-nearest neighbors algorithm (knn).
 '''
 ################################################################################
 # IMPORTS
-
+from math import sqrt
 
 ################################################################################
 # CONSTANTS
@@ -31,26 +31,7 @@ class KNNClass:
         self.y_test = y_test
         self.spam_samples = None
         self.email_samples = None
-    
-    
-    '''
-    Parameter(s):
-    Process:
-    Return:
-    Function Dependencies:
-    '''
-    def evaluate(self):
-        pass
 
-
-    '''
-    Parameter(s):
-    Process:
-    Return:
-    Function Dependencies:
-    '''
-    def learn(self):
-        pass
 
 
 ################################################################################
