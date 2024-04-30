@@ -16,7 +16,6 @@ TARGET = 1
 FEATURE = 0
 SPAM = -1
 NOT_SPAM = -2
-TOTAL = -3
 
 ################################################################################
 # NAIVE BAYES CLASS
@@ -64,8 +63,9 @@ class NaiveBayesClass:
     '''
     Parameter(s): self, spam_prop, non_spam_prop, spam_word_freq, 
                   non_spam_word_freq
-    Process: Calculate the probability of email being spam and not spam 
-    Return: email_result, true_result
+    Process: Takes in probabilities to calculate whether or not an email is spam
+             or not. 
+    Return: email_result (list), true_result (list)
     Function Dependencies: none
     '''
     def evaluate(self, spam_prop, non_spam_prop, spam_word_freq, 
@@ -86,6 +86,7 @@ class NaiveBayesClass:
 
                 value = self.validation_fold[FEATURE].iloc[row, col]
 
+                # check if the word exists
                 if value > 0.0:
                 
                     spam_calc *= spam_word_freq[col]
@@ -107,11 +108,13 @@ class NaiveBayesClass:
 
         return email_result, true_result
 
+
     '''
     Parameter(s): self
-    Process: learns with the training data
-    Return:spam_prior_prob (int), non_spam_prior_prob (int)
-    Function Dependencies: count_samples, prior_prob
+    Process: learns with the training data. 
+    Return:spam_prior_prob (int), non_spam_prior_prob (int), spam_word_freq 
+           (list), non_spam_word_freq (list)
+    Function Dependencies: count_samples, data_prop, word_frequency
     '''
     def learn(self):
         
@@ -186,5 +189,6 @@ class NaiveBayesClass:
             spam_word_freq.append(spam_word_count_prob)
 
         return spam_word_freq, non_spam_word_freq
+
 
 ################################################################################
