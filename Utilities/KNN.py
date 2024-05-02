@@ -30,8 +30,6 @@ class KNNClass:
         self.validation_fold = validation_fold
         self.X_test = X_test
         self.y_test = y_test
-        self.spam_samples = None
-        self.email_samples = None
         self.k = 3
 
     '''
