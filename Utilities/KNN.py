@@ -15,8 +15,6 @@ import numpy as np
 # CONSTANTS
 TARGET = 1
 FEATURE = 0
-SPAM = -1
-NOT_SPAM = -2
 
 ################################################################################
 # KNN CLASS
@@ -37,7 +35,7 @@ class KNNClass:
     Process: Looks at test/validation data and makes decision based on closest
              neighbors in training data
     Return: calc_result (list), true_result (list)
-    Function Dependencies:
+    Function Dependencies: none
     '''
     def evaluate(self, X_test_dataset, y_test_dataset):
 

@@ -62,8 +62,7 @@ class NaiveBayesClass:
     
     '''
     Parameter(s): self, spam_prop, non_spam_prop, spam_word_freq, test_dataset,
-                  answer_dataset
-                  non_spam_word_freq
+                  answer_dataset, non_spam_word_freq
     Process: Takes in probabilities to calculate whether or not an email is spam
              or not. 
     Return: email_result (list), true_result (list)
@@ -113,8 +112,8 @@ class NaiveBayesClass:
     '''
     Parameter(s): self
     Process: learns with the training data. 
-    Return:spam_prior_prob (int), non_spam_prior_prob (int), spam_word_freq 
-           (list), non_spam_word_freq (list)
+    Return: spam_prior_prob (int), non_spam_prior_prob (int), spam_word_freq 
+            (list), non_spam_word_freq (list)
     Function Dependencies: count_samples, data_prop, word_frequency
     '''
     def learn(self):
